@@ -52,3 +52,5 @@ def draw():
 def keyReleased():
     global goToNextScene
     goToNextScene = True
+    
+    HI
