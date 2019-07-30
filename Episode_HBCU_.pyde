@@ -58,18 +58,18 @@ def setup():
               },
               {
               "talk": "Hello 2",
-              "x":900,
-              "y":230
+              "x":950,
+              "y":280
               },
               {
               "talk": "Hello 3",
-              "x":10,
-              "y":230
+              "x":70,
+              "y":300
               },
               {
               "talk": "Hello 4",
-              "x":900,
-              "y":230
+              "x":950,
+              "y":280
               }
              ]
     
@@ -96,20 +96,26 @@ def draw():
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
-    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1:
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and dialogue %2 == 0:
         right_convo_2.right_convo_2()
-        while dialogue <= 3:
-            blurb = texts[dialogue]
-            words = blurb["talk"]
-            x = blurb ["x"]
-            y = blurb ["y"]
-            text(words,x,y)
-            print("dialogue")
-            dialogue += 2
+        blurb = texts[dialogue]
+        words = blurb["talk"]
+        x = blurb ["x"]
+        y = blurb ["y"]
+        text(words,x,y)
+        print("dialogue")
+        dialogue += 1
         bubble += 1
         goToNextBubble = False
-    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0:
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and dialogue %2 == 1:
         left_convo_2.left_convo_2()
+        blurb = texts[dialogue]
+        words = blurb["talk"]
+        x = blurb ["x"]
+        y = blurb ["y"]
+        text(words,x,y)
+        print("dialogue")
+        dialogue += 1
         bubble += 1
         goToNextBubble = False
         
