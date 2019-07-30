@@ -52,9 +52,9 @@ def setup():
     dialogue = 0
     texts = [
              {
-              "talk": "Hello 1",
-              "x":70,
-              "y":300
+              "talk": "Hey Penny Girl!! Can you \nbelieve we are in college now? \nI am so excited no parents, no rules,\nand a whole lot of fun girl! \nIts about to be a act up school year!!",
+              "x":50,
+              "y":280
               },
               {
               "talk": "Hello 2",
