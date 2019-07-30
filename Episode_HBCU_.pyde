@@ -1,12 +1,16 @@
 import scene_1
 import scene_2
+import speech
 
 def setup(): 
     size(1400,750)
     global scene
+    global bubble
+    global visable
     global goToNextScene
-    global x
-    global y
+    global goToNextBubble
+    global speech_x
+    global speech_y
     img= loadImage("sky.png") 
     image(img, 0, 0, 1400, 750)
 
@@ -36,13 +40,19 @@ def setup():
     fill(0, 0, 0)
     text("Click 's' to Start", 460, 650)
     scene = 1
+    bubble = 1
     goToNextScene = True
+    goToNextBubble = True
+    visable = True
 def draw():
 #SECOND SCENE
     global scene
+    global bubble
+    global visable
     global goToNextScene
-    global x
-    global y
+    global goToNextBubble
+    global speech_x
+    global speech_y
     if keyPressed and key == 's' and scene == 1 and goToNextScene == True:
         scene_1.scene_1()
         scene += 1
@@ -50,12 +60,22 @@ def draw():
         print("clicked once", scene)
     elif keyPressed and key == 's' and scene == 2 and goToNextScene == True:
         scene_2.scene_2()
-        scene_2.speech(10,230)
+        speech.speech(10,230)
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble == 1 and visable == True:
+            goToNextBubble = False
+            scene_2.scene_2()
+            speech.speech(900,230)
+            print("next bubble")
+            visable = False
 def keyReleased():
     global goToNextScene
     goToNextScene = True
-    
+    global goToNextBubble
+    global visable
+    goToNextScene = True
+    goToNextBubble = True
+    visable = True
     
