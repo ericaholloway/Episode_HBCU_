@@ -10,6 +10,3 @@ def scene_2():
     image(img,1020,400,200,300)
     
     #Speech bubble
-def speech():
-    img= loadImage("speech.png") 
-    image(img, 10, 230, 300, 200)
