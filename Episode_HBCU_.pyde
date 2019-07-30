@@ -1,13 +1,14 @@
 import scene_1
 import scene_2
 import speech
-import convo_2 
+import left_convo_2 
+import right_convo_2
 
 def setup(): 
     size(1400,750)
     global scene
     global bubble
-    global visable
+    #global visable
     global goToNextScene
     global goToNextBubble
     global speech_x
@@ -44,12 +45,12 @@ def setup():
     bubble = 1
     goToNextScene = True
     goToNextBubble = True
-    visable = True
+    #visable = True
 def draw():
 #SECOND SCENE
     global scene
     global bubble
-    global visable
+    #global visable
     global goToNextScene
     global goToNextBubble
     global speech_x
@@ -65,21 +66,21 @@ def draw():
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
-    if keyPressed and key == 'c' and goToNextBubble == True and bubble == 1 and visable == True:
-        convo_2.convo_2()
-
-    # if keyPressed and key == 'c' and goToNextBubble == True and bubble == 1 and visable == True:
-    #         goToNextBubble = False
-    #         scene_2.scene_2()
-    #         speech.speech(900,230)
-    #         print("next bubble")
-    #         visable = False
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 1: #and visable == True:
+        right_convo_2.right_convo_2()
+        bubble += 1
+        goToNextBubble = False
+        #visable = False
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0: #and visable == True:
+        left_convo_2.left_convo_2()
+        bubble += 1
+        goToNextBubble = False
+        
 def keyReleased():
     global goToNextScene
-    goToNextScene = True
     global goToNextBubble
     global visable
     goToNextScene = True
     goToNextBubble = True
-    visable = True
+    #visable = True
     
