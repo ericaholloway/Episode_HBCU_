@@ -1,6 +1,6 @@
+
 import scene_1
 import scene_2
-import scene_3
 import speech
 import left_convo_2
 import right_convo_2
@@ -53,24 +53,24 @@ def setup():
     dialogue = 0
     texts = [
              {
-              "talk": "Hey Penny Girl!! Can you \nbelieve we are in college now? \nI am so excited no parents, no rules,\nand a whole lot of fun girl! \nIts about to be a act up school year!!",
-              "x":50,
-              "y":280
-              },
-              {
-              "talk": "Hello 2",
-              "x":950,
-              "y":280
-              },
-              {
-              "talk": "Hello 3",
+              "talk": "Hello 1",
               "x":70,
               "y":300
               },
               {
+              "talk": "Hello 2",
+              "x":900,
+              "y":230
+              },
+              {
+              "talk": "Hello 3",
+              "x":10,
+              "y":230
+              },
+              {
               "talk": "Hello 4",
-              "x":950,
-              "y":280
+              "x":900,
+              "y":230
               }
              ]
     
@@ -97,26 +97,20 @@ def draw():
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
-    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and dialogue %2 == 0:
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1:
         right_convo_2.right_convo_2()
-        blurb = texts[dialogue]
-        words = blurb["talk"]
-        x = blurb ["x"]
-        y = blurb ["y"]
-        text(words,x,y)
-        print("dialogue")
-        dialogue += 1
+        while dialogue <= 3:
+            blurb = texts[dialogue]
+            words = blurb["talk"]
+            x = blurb ["x"]
+            y = blurb ["y"]
+            text(words,x,y)
+            print("dialogue")
+            dialogue += 2
         bubble += 1
         goToNextBubble = False
-    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and dialogue %2 == 1:
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0:
         left_convo_2.left_convo_2()
-        blurb = texts[dialogue]
-        words = blurb["talk"]
-        x = blurb ["x"]
-        y = blurb ["y"]
-        text(words,x,y)
-        print("dialogue")
-        dialogue += 1
         bubble += 1
         goToNextBubble = False
         
