@@ -5,6 +5,8 @@ def setup():
     size(1400,750)
     global scene
     global goToNextScene
+    global x
+    global y
     img= loadImage("sky.png") 
     image(img, 0, 0, 1400, 750)
 
@@ -39,6 +41,8 @@ def draw():
 #SECOND SCENE
     global scene
     global goToNextScene
+    global x
+    global y
     if keyPressed and key == 's' and scene == 1 and goToNextScene == True:
         scene_1.scene_1()
         scene += 1
@@ -46,7 +50,7 @@ def draw():
         print("clicked once", scene)
     elif keyPressed and key == 's' and scene == 2 and goToNextScene == True:
         scene_2.scene_2()
-        scene_2.speech()
+        scene_2.speech(10,230)
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
