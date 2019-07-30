@@ -9,3 +9,6 @@ def scene_2():
     img = loadImage ("penny1.PNG")
     image(img,1020,400,200,300)
     
+    #Speech bubble
+    img= loadImage("speech.png") 
+    image(img, 10, 230, 300, 200)
