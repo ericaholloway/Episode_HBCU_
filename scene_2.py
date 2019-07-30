@@ -13,3 +13,5 @@ def scene_2():
 def speech():
     img= loadImage("speech.png") 
     image(img, 10, 230, 300, 200)
+    
+    
