@@ -46,6 +46,7 @@ def draw():
         print("clicked once", scene)
     elif keyPressed and key == 's' and scene == 2 and goToNextScene == True:
         scene_2.scene_2()
+        scene_2.speech()
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
