@@ -5,4 +5,7 @@ def scene_2():
     img= loadImage("dijonay.PNG") 
     image(img, 150, 400, 200, 300)
     
+    #Penny
+    img = loadImage ("penny1.PNG")
+    image(img,1020,400,200,300)
     
