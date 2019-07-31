@@ -117,7 +117,7 @@ def setup():
               "y":210
               },
               {
-              "talk": "Excuse me Mrs. Grant, I didn't\n to the reading.",
+              "talk": "Excuse me Mrs. Johnson, I didn't\n to the reading.",
               "x":700,
               "y":260
               },
