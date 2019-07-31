@@ -111,7 +111,7 @@ def draw():
         y = blurb ["y"]
         textSize(17)
         text(words,x,y)
-        print("dialogue")
+        print("1dialogue")
         fill (134, 222, 27, 160)
         rect(100, 50, 310, 50)
         n= createFont ("Ubuntu-Medium.ttf",18)
@@ -128,7 +128,7 @@ def draw():
         x = blurb ["x"]
         y = blurb ["y"]
         text(words,x,y)
-        print("dialogue")
+        print("2dialogue")
         fill (134, 222, 27, 160)
         rect(100, 50, 310, 50)
         n= createFont ("Ubuntu-Medium.ttf",18)
@@ -138,7 +138,7 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
-    elif dialogue == 4 and goToNextBubble == True:
+    elif dialogue == 4 and goToNextBubble == True and bubble == 5:
         fill (220, 61, 235, 250)
         rect(100, 50, 310, 50)
         n= createFont ("Ubuntu-Medium.ttf",18)
@@ -146,16 +146,41 @@ def draw():
         fill (0, 0, 0)
         text("Click 'A' to read the tweet",100, 80)
         dialogue += 1
+        bubble += 1
         goToNextBubble = False
         
-    elif keyPressed and key == 'a' and goToNextBubble == True and bubble >= 3 and dialogue >= 3:
+    if keyPressed and key == 'a' and goToNextBubble == True  and bubble == 6:
         #iPhone
         img = loadImage("iphone2.PNG")
         image(img, 250, 0, 850, 750)
         #Tweet
         img = loadImage("confess1.PNG")
         image(img, 506, 100, 358, 543)
-        print ("hbcu")
+        print ("hbcu1")
+        bubble += 1
+        dialogue += 1
+        goToNextBubble = False
+    elif keyPressed and key == 'a' and goToNextBubble == True  and bubble == 7:
+        #iPhone
+        img = loadImage("iphone2.PNG")
+        image(img, 250, 0, 850, 750)
+        #Tweet
+        img = loadImage("confess2.PNG")
+        image(img, 506, 100, 358, 543)
+        print ("hbcu2")
+        bubble += 1
+        dialogue += 1
+        goToNextBubble = False
+    elif keyPressed and key == 'a' and goToNextBubble == True  and bubble == 8:
+        #iPhone
+        img = loadImage("iphone2.PNG")
+        image(img, 250, 0, 850, 750)
+        #Tweet
+        img = loadImage("confess3.PNG")
+        image(img, 506, 100, 358, 543)
+        print ("hbcu3")
+        bubble += 1
+        dialogue += 1
         goToNextBubble = False
 
     if keyPressed and key == 's' and scene == 3 and goToNextScene == True:
