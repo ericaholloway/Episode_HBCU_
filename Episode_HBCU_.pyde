@@ -213,19 +213,19 @@ def draw():
         bubble += 1
         goToNextBubble = False
 #CLICK 'S' TO GO TO THE NEXT SCREEN
-    # elif bubble == 8 and goToNextBubble == True:
-    #     fill (220, 61, 235, 250)
-    #     rect(100, 50, 310, 50)
-    #     n= createFont ("Ubuntu-Medium.ttf",18)
-    #     textFont(n)
-    #     fill (0, 0, 0)
-    #     text("Click 'A' to read the tweet",100, 80)
-    #     dialogue += 1
-    #     bubble += 1
-    #     goToNextBubble = False
+    elif bubble == 12 and goToNextBubble == True:
+        fill (240, 10, 63, 250)
+        rect(100, 50, 310, 50)
+        n= createFont ("Ubuntu-Medium.ttf",18)
+        textFont(n)
+        fill (0,0,0)
+        text("Click 'S' to go to class",100, 80)
+        dialogue += 1
+        bubble += 1
+        goToNextBubble = False
 #TRANSITION FROM CONFESSION SCREEN BACK TO THE SCENE 3
 
-    if keyPressed and key == 's' and scene == 3 and goToNextScene == True and bubble == 12:
+    if keyPressed and key == 's' and scene == 3 and goToNextScene == True and bubble == 13:
         scene_3.scene_3()
         fill (134, 222, 27, 160)
         rect(100, 50, 310, 50)
