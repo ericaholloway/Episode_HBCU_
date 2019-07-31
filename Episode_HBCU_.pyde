@@ -130,7 +130,7 @@ def draw():
         words = blurb["talk"]
         x = blurb ["x"]
         y = blurb ["y"]
-        n= createFont ("DarkerGrotesque-Bold.ttf",20)
+        n= createFont ("RobotoCondensed-Bold.ttf",20)
         textFont(n)
         text(words,x,y)
         print("1dialogue")
@@ -150,7 +150,7 @@ def draw():
         words = blurb["talk"]
         x = blurb ["x"]
         y = blurb ["y"]
-        n= createFont ("DarkerGrotesque-Bold.ttf",20)
+        n= createFont ("RobotoCondensed-Bold.ttf",20)
         textFont(n)
         text(words,x,y)
         print("2dialogue")
