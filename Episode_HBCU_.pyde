@@ -7,6 +7,7 @@ import speech
 import left_convo_2
 import right_convo_2
 import bubble_class
+import think_class
 
 def setup():
     size(1400, 750)
@@ -115,19 +116,19 @@ def setup():
               "y":100
               },
               {
-              "talk": " OMG!! I never even knew that we had\n summer reading!! Should I ….",
-              "x":70,
-              "y":210
+              "talk": " OMG!! I never even knew that we had\n summer reading!! Should I...",
+              "x":400,
+              "y":150
               },
               {
-              "talk": "Excuse me Mrs. Johnson, I didn't\n to the reading.",
+              "talk": "Excuse me Mrs. Johnson, I didn't\n do the reading.",
               "x":700,
               "y":260
               },
               {
               "talk": "Thats ok, I appreciate your honesty. \nYou can take the pop quiz next week.",
-              "x":70,
-              "y":210
+              "x":530,
+              "y":100
               },
               {
               "talk": "Yes ",
@@ -136,8 +137,8 @@ def setup():
               },
               {
               "talk": "OK great! So everyone has done the \nreading! Time for a pop quiz!! ",
-              "x":70,
-              "y":210
+              "x":530,
+              "y":100
               },
              ]
 
@@ -330,7 +331,18 @@ def draw():
         bubble_c += 1
         goToNextBubble = False
     elif keyPressed and key == 'c' and goToNextBubble == True and bubble_c % 2 == 0:
-        
+        think_class.think_class()
+        blurb_c = classroom[dialogue_c]
+        words_c = blurb_c["talk"]
+        x = blurb_c ["x"]
+        y = blurb_c ["y"]
+        n= createFont ("RobotoCondensed-Bold.ttf",20)
+        textFont(n)
+        text(words_c,x,y)
+        print("2dialogue classroom")
+        dialogue_c += 1
+        bubble_c += 1
+        goToNextBubble = False
         
     if keyPressed and key == 's' and scene == 4 and goToNextScene == True:
         scene_4.scene_4a()
