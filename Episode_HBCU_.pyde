@@ -163,18 +163,18 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
-#CLICK 'C' CHANGES TO CLICK 'A'
+#CLICK 'C' CHANGES TO CLICK 'T'
     elif goToNextBubble == True and bubble == 5:
         fill (220, 61, 235, 250)
         rect(100, 50, 310, 50)
         n= createFont ("Ubuntu-Medium.ttf",18)
         textFont(n)
         fill (0, 0, 0)
-        text("Click 'A' to read the tweet",100, 80)
+        text("Click 'T' to read the tweet",100, 80)
         bubble += 1
         goToNextBubble = False
 #CONFESSION 1
-    if keyPressed and key == 'a' and goToNextBubble == True  and bubble == 6:
+    if keyPressed and key == 't' and goToNextBubble == True  and bubble == 6:
         #iPhone
         img = loadImage("iphone2.PNG")
         image(img, 250, 0, 850, 750)
@@ -185,7 +185,7 @@ def draw():
         bubble += 1
         goToNextBubble = False
 #CONFESSION 2
-    elif keyPressed and key == 'a' and goToNextBubble == True  and bubble == 7:
+    elif keyPressed and key == 't' and goToNextBubble == True  and bubble == 7:
         #iPhone
         img = loadImage("iphone2.PNG")
         image(img, 250, 0, 850, 750)
@@ -196,7 +196,7 @@ def draw():
         bubble += 1
         goToNextBubble = False
 #CONFESSION 3
-    elif keyPressed and key == 'a' and goToNextBubble == True  and bubble == 8:
+    elif keyPressed and key == 't' and goToNextBubble == True  and bubble == 8:
         #iPhone
         img = loadImage("iphone2.PNG")
         image(img, 250, 0, 850, 750)
