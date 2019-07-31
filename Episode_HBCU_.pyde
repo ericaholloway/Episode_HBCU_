@@ -1,6 +1,6 @@
 import scene_1
 import scene_2
-#import scene_3
+import scene_3
 import speech
 import left_convo_2
 import right_convo_2
@@ -122,6 +122,12 @@ def draw():
         goToNextBubble = False
     # elif keyPressed and key == 'c' and goToNextBubble == True and bubble > 4 and dialogue > :
     #     print ("hbcu")
+
+    if keyPressed and key == 's' and scene == 3 and goToNextScene == True:
+        scene_3.scene_3()
+        scene += 1
+        goToNextScene = False
+        print("clicked 3 times", scene)
         
         
 def keyReleased():
