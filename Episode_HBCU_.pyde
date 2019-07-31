@@ -206,6 +206,12 @@ def draw():
         #Tweet
         img = loadImage("confess3.PNG")
         image(img, 506, 100, 358, 543)
+        fill (134, 222, 27, 240)
+        rect(100, 50, 310, 50)
+        n= createFont ("Ubuntu-Medium.ttf",18)
+        textFont(n)
+        fill (0, 0, 0)
+        text("Click 'C' to continue the conversation",100, 80)
         print ("hbcu3")
         bubble += 1
         dialogue += 1
