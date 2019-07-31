@@ -55,22 +55,22 @@ def setup():
              {
               "talk": "Hey Penny Girl!! Can you \nbelieve we are in college now? \nI am so excited no parents, no rules,\nand a whole lot of fun girl! \nIts about to be a act up school year!!",
               "x":70,
-              "y":280
+              "y":210
               },
               {
               "talk": "Hello 2",
               "x":950,
-              "y":280
+              "y":210
               },
               {
               "talk": "Hello 3",
               "x":70,
-              "y":300
+              "y":210
               },
               {
               "talk": "Hello 4",
               "x":950,
-              "y":280
+              "y":210
               }
              ]
     
@@ -93,7 +93,7 @@ def draw():
         print("clicked once", scene)
     elif keyPressed and key == 's' and scene == 2 and goToNextScene == True:
         scene_2.scene_2()
-        speech.speech(10, 210)
+        speech.speech(10, 150)
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
