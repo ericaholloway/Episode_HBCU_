@@ -299,10 +299,10 @@ def draw():
         #Right SPEECH BUBBLE
     if keyPressed and key == 'c' and goToNextBubble == True and bubble_c % 2 == 1 and bubble_c <= 4:
         right_convo_2.right_convo_2()
-        blurb = texts[dialogue]
-        words = blurb["talk"]
-        x = blurb ["x"]
-        y = blurb ["y"]
+        blurb_c = classroom[dialogue_c]
+        words_c = blurb_c["text"]
+        x = blurb_c ["x"]
+        y = blurb_c ["y"]
         n= createFont ("RobotoCondensed-Bold.ttf",20)
         textFont(n)
         text(words,x,y)
@@ -313,8 +313,8 @@ def draw():
         textFont(n)
         fill (0, 0, 0)
         text("Click 'C' to continue the conversation",100, 80)
-        dialogue += 1
-        bubble += 1
+        dialogue_c += 1
+        bubble_c += 1
         goToNextBubble = False
 #Left SPEECH BUBBLE IN THE CLASSROOM
     elif keyPressed and key == 'c' and goToNextBubble == True and bubble_c %2 == 0 and bubble <= 4:
