@@ -68,22 +68,22 @@ def setup():
               "y":210
               },
               {
-              "talk": "No I haven’t.",
+              "talk": "No I haven't.",
               "x":950,
               "y":210
               },
               {
-              "talk": "oh wow! That really is crazy."
+              "talk": "Oh wow! That really is crazy.",
               "x":70,
               "y":210
               },
               {
-              "talk": "IK GIRL!! I can spend all day reading these things they’re so juicy.  ",
+              "talk": "IK GIRL!! I can spend all day reading these things they're so juicy.  ",
               "x":950,
               "y":210
               },
               {
-              "talk": "Well i can’t, ive gotta go to class. Ill catch you later dijonay. ",
+              "talk": "Well I can't, I've gotta go to class. I'll catch you later Dijonay. ",
               "x":70,
               "y":210
               },
@@ -119,7 +119,7 @@ def draw():
         goToNextScene = False
         print("clicked twice", scene)
 #LEFT SPEECH BUBBLE
-    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and dialogue %2 == 0 and dialogue <= 3 and dialogue > 4 and dialogue < 8 :
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and dialogue %2 == 0 and (dialogue <= 3 or dialogue > 4 or dialogue < 8) :
         right_convo_2.right_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
@@ -130,7 +130,7 @@ def draw():
         print("1dialogue")
         fill (134, 222, 27, 160)
         rect(100, 50, 310, 50)
-        n= createFont ("Ubuntu-Medium.ttf",18)
+        n= createFont ("DarkerGrotesque-Regular.ttf",18)
         textFont(n)
         fill (0, 0, 0)
         text("Click 'C' to continue the conversation",100, 80)
@@ -138,7 +138,7 @@ def draw():
         bubble += 1
         goToNextBubble = False
 #RIGHT SPEECH BUBBLE
-    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and dialogue %2 == 1 and dialogue <= 3 and dialogue > 4 and dialogue < 8:
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and dialogue %2 == 1 and (dialogue <= 3 or dialogue > 4 or dialogue < 8):
         left_convo_2.left_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
@@ -159,7 +159,7 @@ def draw():
     elif dialogue == 4 and goToNextBubble == True and bubble == 5:
         fill (220, 61, 235, 250)
         rect(100, 50, 310, 50)
-        n= createFont ("Ubuntu-Medium.ttf",18)
+        n= createFont ("DarkerGrotesque-Regular.ttf",18)
         textFont(n)
         fill (0, 0, 0)
         text("Click 'A' to read the tweet",100, 80)
