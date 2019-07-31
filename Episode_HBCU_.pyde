@@ -337,6 +337,10 @@ def draw():
         bubble += 1
         goToNextBubble = False
         
+    if keyPressed and key == 's' and scene == 4 and goToNextScene == True:
+        scene_4.scene_4a()
+        scene += 1
+        
         
 def keyReleased():
     global goToNextScene
