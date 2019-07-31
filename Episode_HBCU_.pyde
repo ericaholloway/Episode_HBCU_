@@ -104,7 +104,7 @@ def draw():
         goToNextScene = False
         print("clicked twice", scene)
 #LEFT SPEECH BUBBLE
-    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and dialogue %2 == 0 and dialogue <= 7 :
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and dialogue %2 == 0 and dialogue <= 3 and dialogue > 4 and dialogue < 8 :
         right_convo_2.right_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
@@ -123,7 +123,7 @@ def draw():
         bubble += 1
         goToNextBubble = False
 #RIGHT SPEECH BUBBLE
-    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and dialogue %2 == 1 and dialogue <= 8:
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and dialogue %2 == 1 and dialogue <= 3 and dialogue > 4 and dialogue < 8:
         left_convo_2.left_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
