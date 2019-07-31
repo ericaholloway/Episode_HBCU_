@@ -53,7 +53,7 @@ def setup():
     dialogue = 0
     texts = [
              {
-              "talk": "Hey Penny Girl!! Can you \nbelieve we are in college now? \nI am so excited no parents, no rules,\nand a whole lot of fun girl! \nIts about to be a act up school year!!",
+              "talk": "Hey Penny girl!! Can you \nbelieve we are in college now? \nI am so excited! No parents, no rules,\nand a whole lot of fun, girl! \nIt's about to be a act up school year!",
               "x":70,
               "y":210
               },
@@ -63,7 +63,7 @@ def setup():
               "y":260
               },
               {
-              "talk": " Have you heard of this twitter \naccount named HBCU confession?? \nITS WILD GIRL!",
+              "talk": " Have you heard of this twitter \naccount named HBCU confessions?? \nIT'S WILD GIRL!",
               "x":70,
               "y":240
               },
