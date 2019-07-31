@@ -13,6 +13,7 @@ def setup():
     global bubble_c
     global texts
     global dialogue
+    global dialogue_c
     global goToNextScene
     global goToNextBubble
     global speech_x
@@ -52,7 +53,7 @@ def setup():
     goToNextScene = True
     goToNextBubble = True
     
-    #Texts
+    #Texts for scene two in front of FAMU
     dialogue = 0
     texts = [
              {
@@ -96,12 +97,48 @@ def setup():
               "y":210
               },
              ]
+    #texts for classroom
+    dialogue_c = 0        
+    classroom = [
+            {
+              "talk": "Good morning class I am Mrs. Grant, \nwelcome to African American Studies! \nHas everyone done the summer reading? ",
+              "x":70,
+              "y":210
+              },
+              {
+              "talk": " OMG!! I never even knew that we had\n summer reading!! Should I ….",
+              "x":970,
+              "y":260
+              },
+              {
+              "talk": "Excuse me Mrs. Grant, I didn't\n to the reading.",
+              "x":70,
+              "y":240
+              },
+              {
+              "talk": "Thats ok, I appreciate your honesty. \nYou can take the pop quiz next week.",
+              "x":970,
+              "y":260
+              },
+              {
+              "talk": "Yes ",
+              "x":70,
+              "y":210
+              },
+              {
+              "talk": "OK great! So everyone has done the reading! Time for a pop quiz!! ",
+              "x":950,
+              "y":210
+              },
+             ]
+
 
 
 def draw():
 # SECOND SCENE
     global scene
     global dialogue
+    global dialogue_c
     global bubble
     global bubble_c
     global texts
@@ -115,6 +152,11 @@ def draw():
         scene += 1
         goToNextScene = False
         print("clicked once", scene)
+
+
+
+
+
 #SCENE 2
     elif keyPressed and key == 's' and scene == 2 and goToNextScene == True:
         scene_2.scene_2()
@@ -127,9 +169,9 @@ def draw():
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
-#Right SPEECH BUBBLE
+#Left SPEECH BUBBLE
     if keyPressed and key == 'c' and goToNextBubble == True and ((bubble % 2 == 1 and bubble <= 4) or (bubble % 2 == 0 and bubble > 8 and bubble < 12 )) :
-        right_convo_2.right_convo_2()
+        left_convo_2.left_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
         x = blurb ["x"]
@@ -147,9 +189,9 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
-#Left SPEECH BUBBLE
+#Right SPEECH BUBBLE
     elif keyPressed and key == 'c' and goToNextBubble == True and ((bubble%2 == 0 and bubble <= 4) or (bubble % 2 == 1 and bubble > 8 and bubble < 12)):
-        left_convo_2.left_convo_2()
+        right_convo_2.right_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
         x = blurb ["x"]
@@ -177,6 +219,8 @@ def draw():
         text("Click 'T' to read the tweet",100, 80)
         bubble += 1
         goToNextBubble = False
+
+
 #CONFESSION 1
     if keyPressed and key == 't' and goToNextBubble == True  and bubble == 6:
         #iPhone
@@ -227,6 +271,15 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
+
+
+
+
+
+
+
+
+
 #TRANSITION FROM CONFESSION SCREEN BACK TO THE SCENE 3
 
     if keyPressed and key == 's' and scene == 3 and goToNextScene == True and bubble == 13:
@@ -240,9 +293,11 @@ def draw():
         scene += 1
         goToNextScene = False
         print("clicked 3 times", scene)
-#TALKING
+
+
+#TALKING IN THE CLASSROOM
         #Right SPEECH BUBBLE
-    if keyPressed and key == 'c' and goToNextBubble == True and ((bubble % 2 == 1 and bubble <= 4):
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble_c % 2 == 1 and bubble_c <= 4:
         right_convo_2.right_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
@@ -261,7 +316,7 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
-#Left SPEECH BUBBLE
+#Left SPEECH BUBBLE IN THE CLASSROOM
     elif keyPressed and key == 'c' and goToNextBubble == True and bubble_c %2 == 0 and bubble <= 4:
         left_convo_2.left_convo_2()
         blurb = texts[dialogue]
