@@ -74,18 +74,18 @@ def setup():
               },
               {
               "talk": "Oh wow! That really is crazy.",
-              "x":70,
-              "y":210
+              "x":970,
+              "y":260
               },
               {
               "talk": "IK GIRL!! I can spend all day reading these things they're so juicy.  ",
-              "x":950,
+              "x":70,
               "y":210
               },
               {
               "talk": "Well I can't, I've gotta go to class. I'll catch you later Dijonay. ",
-              "x":70,
-              "y":210
+              "x":970,
+              "y":260
               },
               {
               "talk": "Alright, bye Penny girl!",
@@ -124,7 +124,7 @@ def draw():
         goToNextScene = False
         print("clicked twice", scene)
 #LEFT SPEECH BUBBLE
-    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and (bubble <= 4 or bubble > 8 or bubble < 12 ) :
+    if keyPressed and key == 'c' and goToNextBubble == True and ((bubble % 2 == 1 and bubble <= 4) or (bubble % 2 == 0 and bubble > 8 and bubble < 12 )) :
         right_convo_2.right_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
@@ -144,7 +144,7 @@ def draw():
         bubble += 1
         goToNextBubble = False
 #RIGHT SPEECH BUBBLE
-    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and (bubble <= 4 or bubble > 8 or bubble < 12):
+    elif keyPressed and key == 'c' and goToNextBubble == True and ((bubble%2 == 0 and bubble <= 4) or (bubble % 2 == 1 and bubble > 8 and bubble < 12)):
         left_convo_2.left_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
@@ -211,7 +211,6 @@ def draw():
         text("Click 'C' to continue the conversation",100, 80)
         print ("hbcu3")
         bubble += 1
-        dialogue += 1
         goToNextBubble = False
 #CLICK 'S' TO GO TO THE NEXT SCREEN
     # elif bubble == 8 and goToNextBubble == True:
