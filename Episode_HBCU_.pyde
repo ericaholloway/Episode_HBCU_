@@ -5,6 +5,7 @@ import scene_4
 import speech
 import left_convo_2
 import right_convo_2
+import bubble_class
 
 def setup():
     size(1400, 750)
@@ -12,6 +13,7 @@ def setup():
     global bubble
     global bubble_c
     global texts
+    global classroom
     global dialogue
     global dialogue_c
     global goToNextScene
@@ -97,37 +99,41 @@ def setup():
               "y":210
               },
              ]
+    
+    
+    
+    
     #texts for classroom
     dialogue_c = 0        
     classroom = [
             {
               "talk": "Good morning class I am Mrs. Grant, \nwelcome to African American Studies! \nHas everyone done the summer reading? ",
-              "x":70,
-              "y":210
+              "x":700,
+              "y":260
               },
               {
               "talk": " OMG!! I never even knew that we had\n summer reading!! Should I ….",
-              "x":970,
-              "y":260
-              },
-              {
-              "talk": "Excuse me Mrs. Grant, I didn't\n to the reading.",
-              "x":70,
-              "y":240
-              },
-              {
-              "talk": "Thats ok, I appreciate your honesty. \nYou can take the pop quiz next week.",
-              "x":970,
-              "y":260
-              },
-              {
-              "talk": "Yes ",
               "x":70,
               "y":210
               },
               {
-              "talk": "OK great! So everyone has done the reading! Time for a pop quiz!! ",
-              "x":950,
+              "talk": "Excuse me Mrs. Grant, I didn't\n to the reading.",
+              "x":700,
+              "y":260
+              },
+              {
+              "talk": "Thats ok, I appreciate your honesty. \nYou can take the pop quiz next week.",
+              "x":70,
+              "y":210
+              },
+              {
+              "talk": "Yes ",
+              "x":700,
+              "y":260
+              },
+              {
+              "talk": "OK great! So everyone has done the \nreading! Time for a pop quiz!! ",
+              "x":70,
               "y":210
               },
              ]
@@ -142,6 +148,7 @@ def draw():
     global bubble
     global bubble_c
     global texts
+    global classroom
     global goToNextScene
     global goToNextBubble
     global speech_x
@@ -290,6 +297,7 @@ def draw():
         textFont(n)
         fill (0, 0, 0)
         text("Click 'C' to continue the conversation",100, 80)
+        bubble+=1
         scene += 1
         goToNextScene = False
         print("clicked 3 times", scene)
@@ -297,16 +305,16 @@ def draw():
 
 #TALKING IN THE CLASSROOM
         #Right SPEECH BUBBLE
-    if keyPressed and key == 'c' and goToNextBubble == True and bubble_c % 2 == 1 and bubble_c <= 4:
-        right_convo_2.right_convo_2()
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble_c % 2 == 1 and bubble_c == 1:
+        bubble_class.bubble_class()
         blurb_c = classroom[dialogue_c]
-        words_c = blurb_c["text"]
+        words_c = blurb_c["talk"]
         x = blurb_c ["x"]
         y = blurb_c ["y"]
         n= createFont ("RobotoCondensed-Bold.ttf",20)
         textFont(n)
-        text(words,x,y)
-        print("1dialogue")
+        text(words_c,x,y)
+        print("1dialogue classroom")
         fill (134, 222, 27, 160)
         rect(100, 50, 310, 50)
         n= createFont ("Ubuntu-Medium.ttf",18)
@@ -316,26 +324,10 @@ def draw():
         dialogue_c += 1
         bubble_c += 1
         goToNextBubble = False
-#Left SPEECH BUBBLE IN THE CLASSROOM
-    elif keyPressed and key == 'c' and goToNextBubble == True and bubble_c %2 == 0 and bubble <= 4:
-        left_convo_2.left_convo_2()
-        blurb = texts[dialogue]
-        words = blurb["talk"]
-        x = blurb ["x"]
-        y = blurb ["y"]
-        n= createFont ("RobotoCondensed-Bold.ttf",20)
-        textFont(n)
-        text(words,x,y)
-        print("2dialogue")
-        fill (134, 222, 27, 160)
-        rect(100, 50, 310, 50)
-        n= createFont ("Ubuntu-Medium.ttf",18)
-        textFont(n)
-        fill (0, 0, 0)
-        text("Click 'C' to continue the conversation",100, 80)
-        dialogue += 1
-        bubble += 1
-        goToNextBubble = False
+        
+    if keyPressed and key == 's' and scene == 4 and goToNextScene == True:
+        scene_4.scene_4a()
+        scene += 1
         
         
 def keyReleased():
