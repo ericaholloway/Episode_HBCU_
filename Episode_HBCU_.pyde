@@ -58,22 +58,37 @@ def setup():
               "y":210
               },
               {
-              "talk": "Hello 2",
+              "talk": "LOL hey Dijonay! ",
               "x":950,
               "y":210
               },
               {
-              "talk": "Hello 3",
+              "talk": " Have you heard of this twitter account named HBCU confession?? ITS WILD GIRL!",
               "x":70,
               "y":210
               },
               {
-              "talk": "Hello 4",
+              "talk": "No I haven’t.",
               "x":950,
               "y":210
-              }
+              },
+              {
+              "talk": "oh wow! That really is crazy."
+              "x":70,
+              "y":210
+              },
+              {
+              "talk": "IK GIRL!! I can spend all day reading these things they’re so juicy.  ",
+              "x":950,
+              "y":210
+              },
+              {
+              "talk": "Well i can’t, ive gotta go to class. Ill catch you later dijonay. ",
+              "x":70,
+              "y":210
+              },
              ]
-    
+
 
 def draw():
 # SECOND SCENE
@@ -133,7 +148,7 @@ def draw():
         print("2dialogue")
         fill (134, 222, 27, 160)
         rect(100, 50, 310, 50)
-        n= createFont ("Ubuntu-Medium.ttf",18)
+        n= createFont ("DarkerGrotesque-Regular.ttf",18)
         textFont(n)
         fill (0, 0, 0)
         text("Click 'C' to continue the conversation",100, 80)
