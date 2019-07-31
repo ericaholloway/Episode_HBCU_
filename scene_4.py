@@ -3,6 +3,5 @@ def scene_4a():
     image(img, 0, 0, 1400, 750)
     
     
-    
 def scene_4b():
-    print ("hi")
+    print("hi")

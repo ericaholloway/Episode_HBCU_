@@ -7,4 +7,3 @@ def left_convo_2():
             scene_2.scene_2()
             speech.speech(10,150)
             print("left bubble")
-            #visable = False
