@@ -2,6 +2,7 @@ import scene_1
 import scene_2
 import scene_3
 import scene_4
+import think
 import speech
 import left_convo_2
 import right_convo_2
@@ -18,6 +19,8 @@ def setup():
     global dialogue_c
     global goToNextScene
     global goToNextBubble
+    global think_x
+    global think_y
     global speech_x
     global speech_y
 
@@ -108,8 +111,8 @@ def setup():
     classroom = [
             {
               "talk": "Good morning class I am Mrs. Grant, \nwelcome to African American Studies! \nHas everyone done the summer reading? ",
-              "x":700,
-              "y":260
+              "x":530,
+              "y":100
               },
               {
               "talk": " OMG!! I never even knew that we had\n summer reading!! Should I ….",
@@ -151,6 +154,8 @@ def draw():
     global classroom
     global goToNextScene
     global goToNextBubble
+    global think_x
+    global think_y
     global speech_x
     global speech_y
 #SCENE 1
@@ -304,8 +309,8 @@ def draw():
 
 
 #TALKING IN THE CLASSROOM
-        #Right SPEECH BUBBLE
-    if keyPressed and key == 'c' and goToNextBubble == True and bubble_c % 2 == 1 and bubble_c == 1:
+        #Teacher's SPEECH BUBBLE
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble_c % 2 == 1:
         bubble_class.bubble_class()
         blurb_c = classroom[dialogue_c]
         words_c = blurb_c["talk"]
@@ -324,6 +329,8 @@ def draw():
         dialogue_c += 1
         bubble_c += 1
         goToNextBubble = False
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble_c % 2 == 0:
+        
         
     if keyPressed and key == 's' and scene == 4 and goToNextScene == True:
         scene_4.scene_4a()
