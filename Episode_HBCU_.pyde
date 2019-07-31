@@ -120,8 +120,8 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
-    # elif keyPressed and key == 'c' and goToNextBubble == True and bubble > 4 and dialogue > :
-    #     print ("hbcu")
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble > 4 and dialogue > 3:
+        print ("hbcu")
 
     if keyPressed and key == 's' and scene == 3 and goToNextScene == True:
         scene_3.scene_3()
