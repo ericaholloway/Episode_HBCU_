@@ -78,13 +78,13 @@ def setup():
               "y":260
               },
               {
-              "talk": "IK GIRL!! I can spend all day reading these things they're so juicy.  ",
+              "talk": "IK GIRL!! I can spend all day reading \nthese things they're so juicy.  ",
               "x":70,
-              "y":210
+              "y":240
               },
               {
-              "talk": "Well I can't, I've gotta go to class. I'll catch you later Dijonay. ",
-              "x":970,
+              "talk": "Well I can't, I've gotta go to class. \nI'll catch you later Dijonay. ",
+              "x":960,
               "y":260
               },
               {
