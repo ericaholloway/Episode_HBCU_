@@ -1,0 +1,7 @@
+def scene_3():
+    
+    img = loadImage ("classroom.jpg")
+    image(img,0,0,1400,750)
+    
+    img = loadImage ("teacher.JPG")
+    image(img,300, 300,300,300)
