@@ -85,12 +85,13 @@ def draw():
     global goToNextBubble
     global speech_x
     global speech_y
-
+#SCENE 1
     if keyPressed and key == 's' and scene == 1 and goToNextScene == True:
         scene_1.scene_1()
         scene += 1
         goToNextScene = False
         print("clicked once", scene)
+#SCENE 2
     elif keyPressed and key == 's' and scene == 2 and goToNextScene == True:
         scene_2.scene_2()
         fill (134, 222, 27, 160)
@@ -99,11 +100,11 @@ def draw():
         textFont(n)
         fill (0, 0, 0)
         text("Click 'C' to continue the conversation",100, 80)
-        speech.speech(10, 150)
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
-    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and dialogue %2 == 0 and dialogue < 3 :
+#LEFT SPEECH BUBBLE
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and dialogue %2 == 0 and dialogue <= 7 :
         right_convo_2.right_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
@@ -121,7 +122,8 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
-    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and dialogue %2 == 1 and dialogue < 4:
+#RIGHT SPEECH BUBBLE
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and dialogue %2 == 1 and dialogue <= 8:
         left_convo_2.left_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
@@ -138,6 +140,7 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
+#CLICK 'C' CHANGES TO CLICK 'A'
     elif dialogue == 4 and goToNextBubble == True and bubble == 5:
         fill (220, 61, 235, 250)
         rect(100, 50, 310, 50)
@@ -148,7 +151,7 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
-        
+#CONFESSION 1
     if keyPressed and key == 'a' and goToNextBubble == True  and bubble == 6:
         #iPhone
         img = loadImage("iphone2.PNG")
@@ -158,8 +161,9 @@ def draw():
         image(img, 506, 100, 358, 543)
         print ("hbcu1")
         bubble += 1
-        dialogue += 1
+        # dialogue += 1
         goToNextBubble = False
+#CONFESSION 2
     elif keyPressed and key == 'a' and goToNextBubble == True  and bubble == 7:
         #iPhone
         img = loadImage("iphone2.PNG")
@@ -169,8 +173,9 @@ def draw():
         image(img, 506, 100, 358, 543)
         print ("hbcu2")
         bubble += 1
-        dialogue += 1
+        # dialogue += 1
         goToNextBubble = False
+#CONFESSION 3
     elif keyPressed and key == 'a' and goToNextBubble == True  and bubble == 8:
         #iPhone
         img = loadImage("iphone2.PNG")
@@ -182,6 +187,43 @@ def draw():
         bubble += 1
         dialogue += 1
         goToNextBubble = False
+#TRANSITION FROM CONFESSION SCREEN BACK TO THE BUBBLE SCREEN
+#     if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and dialogue %2 == 0 and dialogue <= 8 :
+#         right_convo_2.right_convo_2()
+#         blurb = texts[dialogue]
+#         words = blurb["talk"]
+#         x = blurb ["x"]
+#         y = blurb ["y"]
+#         textSize(17)
+#         text(words,x,y)
+#         print("1dialogue")
+#         fill (134, 222, 27, 160)
+#         rect(100, 50, 310, 50)
+#         n= createFont ("Ubuntu-Medium.ttf",18)
+#         textFont(n)
+#         fill (0, 0, 0)
+#         text("Click 'C' to continue the conversation",100, 80)
+#         dialogue += 1
+#         bubble += 1
+#         goToNextBubble = False
+# #RIGHT SPEECH BUBBLE
+#     elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and dialogue %2 == 1 and dialogue <= 8:
+#         left_convo_2.left_convo_2()
+#         blurb = texts[dialogue]
+#         words = blurb["talk"]
+#         x = blurb ["x"]
+#         y = blurb ["y"]
+#         text(words,x,y)
+#         print("2dialogue")
+#         fill (134, 222, 27, 160)
+#         rect(100, 50, 310, 50)
+#         n= createFont ("Ubuntu-Medium.ttf",18)
+#         textFont(n)
+#         fill (0, 0, 0)
+#         text("Click 'C' to continue the conversation",100, 80)
+#         dialogue += 1
+#         bubble += 1
+#         goToNextBubble = False
 
     if keyPressed and key == 's' and scene == 3 and goToNextScene == True:
         scene_3.scene_3()
