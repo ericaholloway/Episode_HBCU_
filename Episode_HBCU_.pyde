@@ -59,18 +59,18 @@ def setup():
               },
               {
               "talk": "LOL hey Dijonay! ",
-              "x":950,
-              "y":210
+              "x":970,
+              "y":260
               },
               {
-              "talk": " Have you heard of this twitter account named HBCU confession?? ITS WILD GIRL!",
+              "talk": " Have you heard of this twitter \naccount named HBCU confession?? \nITS WILD GIRL!",
               "x":70,
-              "y":210
+              "y":240
               },
               {
               "talk": "No I haven't.",
-              "x":950,
-              "y":210
+              "x":970,
+              "y":260
               },
               {
               "talk": "Oh wow! That really is crazy.",
