@@ -97,7 +97,7 @@ def draw():
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
-    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and dialogue %2 == 0:
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble % 2 == 1 and dialogue %2 == 0 and dialogue < 3 :
         right_convo_2.right_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
@@ -109,7 +109,7 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
-    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and dialogue %2 == 1:
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble%2 == 0 and dialogue %2 == 1 and dialogue < 4:
         left_convo_2.left_convo_2()
         blurb = texts[dialogue]
         words = blurb["talk"]
@@ -120,8 +120,15 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
-    elif keyPressed and key == 'c' and goToNextBubble == True and bubble > 4 and dialogue > 3:
+    elif keyPressed and key == 'a' and goToNextBubble == True and bubble > 4 and dialogue > 3:
+        #iPhone
+        img = loadImage("iphone2.PNG")
+        image(img, 250, 0, 850, 750)
+        #Tweet
+        img = loadImage("confess1.PNG")
+        image(img, 506, 100, 358, 543)
         print ("hbcu")
+        goToNextBubble = False
 
     if keyPressed and key == 's' and scene == 3 and goToNextScene == True:
         scene_3.scene_3()
