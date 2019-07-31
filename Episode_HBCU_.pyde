@@ -1,6 +1,7 @@
 import scene_1
 import scene_2
 import scene_3
+import scene_4
 import speech
 import left_convo_2
 import right_convo_2
