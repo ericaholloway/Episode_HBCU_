@@ -9,6 +9,7 @@ def setup():
     size(1400, 750)
     global scene
     global bubble
+    global bubble_c
     global texts
     global dialogue
     global goToNextScene
@@ -46,6 +47,7 @@ def setup():
     text("Click 's' to Start", 460, 650)
     scene = 1
     bubble = 1
+    bubble_c = 1
     goToNextScene = True
     goToNextBubble = True
     
@@ -100,6 +102,7 @@ def draw():
     global scene
     global dialogue
     global bubble
+    global bubble_c
     global texts
     global goToNextScene
     global goToNextBubble
@@ -123,7 +126,7 @@ def draw():
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
-#LEFT SPEECH BUBBLE
+#Right SPEECH BUBBLE
     if keyPressed and key == 'c' and goToNextBubble == True and ((bubble % 2 == 1 and bubble <= 4) or (bubble % 2 == 0 and bubble > 8 and bubble < 12 )) :
         right_convo_2.right_convo_2()
         blurb = texts[dialogue]
@@ -143,7 +146,7 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
-#RIGHT SPEECH BUBBLE
+#Left SPEECH BUBBLE
     elif keyPressed and key == 'c' and goToNextBubble == True and ((bubble%2 == 0 and bubble <= 4) or (bubble % 2 == 1 and bubble > 8 and bubble < 12)):
         left_convo_2.left_convo_2()
         blurb = texts[dialogue]
@@ -236,6 +239,47 @@ def draw():
         scene += 1
         goToNextScene = False
         print("clicked 3 times", scene)
+#TALKING
+        #Right SPEECH BUBBLE
+    if keyPressed and key == 'c' and goToNextBubble == True and ((bubble % 2 == 1 and bubble <= 4):
+        right_convo_2.right_convo_2()
+        blurb = texts[dialogue]
+        words = blurb["talk"]
+        x = blurb ["x"]
+        y = blurb ["y"]
+        n= createFont ("RobotoCondensed-Bold.ttf",20)
+        textFont(n)
+        text(words,x,y)
+        print("1dialogue")
+        fill (134, 222, 27, 160)
+        rect(100, 50, 310, 50)
+        n= createFont ("Ubuntu-Medium.ttf",18)
+        textFont(n)
+        fill (0, 0, 0)
+        text("Click 'C' to continue the conversation",100, 80)
+        dialogue += 1
+        bubble += 1
+        goToNextBubble = False
+#Left SPEECH BUBBLE
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble_c %2 == 0 and bubble <= 4:
+        left_convo_2.left_convo_2()
+        blurb = texts[dialogue]
+        words = blurb["talk"]
+        x = blurb ["x"]
+        y = blurb ["y"]
+        n= createFont ("RobotoCondensed-Bold.ttf",20)
+        textFont(n)
+        text(words,x,y)
+        print("2dialogue")
+        fill (134, 222, 27, 160)
+        rect(100, 50, 310, 50)
+        n= createFont ("Ubuntu-Medium.ttf",18)
+        textFont(n)
+        fill (0, 0, 0)
+        text("Click 'C' to continue the conversation",100, 80)
+        dialogue += 1
+        bubble += 1
+        goToNextBubble = False
         
         
 def keyReleased():
