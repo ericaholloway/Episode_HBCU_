@@ -1,6 +1,6 @@
 import scene_1
 import scene_2
-import scene_3
+#import scene_3
 import speech
 import left_convo_2
 import right_convo_2
@@ -54,7 +54,7 @@ def setup():
     texts = [
              {
               "talk": "Hey Penny Girl!! Can you \nbelieve we are in college now? \nI am so excited no parents, no rules,\nand a whole lot of fun girl! \nIts about to be a act up school year!!",
-              "x":50,
+              "x":70,
               "y":280
               },
               {
@@ -93,7 +93,7 @@ def draw():
         print("clicked once", scene)
     elif keyPressed and key == 's' and scene == 2 and goToNextScene == True:
         scene_2.scene_2()
-        speech.speech(10, 230)
+        speech.speech(10, 210)
         scene += 1
         goToNextScene = False
         print("clicked twice", scene)
@@ -103,6 +103,7 @@ def draw():
         words = blurb["talk"]
         x = blurb ["x"]
         y = blurb ["y"]
+        textSize(17)
         text(words,x,y)
         print("dialogue")
         dialogue += 1
@@ -119,6 +120,9 @@ def draw():
         dialogue += 1
         bubble += 1
         goToNextBubble = False
+    # elif keyPressed and key == 'c' and goToNextBubble == True and bubble > 4 and dialogue > :
+    #     print ("hbcu")
+        
         
 def keyReleased():
     global goToNextScene
