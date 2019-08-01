@@ -20,3 +20,6 @@ def scene_4b():
     
     img= loadImage("AKAp.PNG")
     image(img, 750, 100, 200, 200)
+    
+    img= loadImage("LaCienega.PNG")
+    image(img, 850, 200, 300, 500)

@@ -12,6 +12,6 @@ def think_class():
 def think_tree():
     
     goToNextBubble = False
-    scene_4.scene_4()
-    think.think(550,100)
+    scene_4.scene_4b()
+    think.think(350,100)
     print("thinking bubble")

@@ -148,8 +148,13 @@ def setup():
     tree = [
         {
             "talk": "I am so glad that I was honest today in class",
-            "x": 560,
-            "y": 100
+            "x": 360,
+            "y": 250
+        },
+         {
+            "talk": "I can't believe I failed my first quiz...I dont think this day can get any worse.",
+            "x": 360,
+            "y": 250
         },
         {
             "talk": "What do you think you’re doin?",
@@ -158,7 +163,7 @@ def setup():
         },
         {
             "talk": "I am just sitting down.",
-            "x": 570,
+            "x": 350,
             "y": 100
         },
         {
@@ -415,9 +420,42 @@ def draw():
         dialogue_c += 1
         bubble_c += 1
         goToNextBubble = False
+# TREE SCENE 5: Choice A
+    
     elif keyPressed and key == 's' and scene == 4 and goToNextScene == True and dialogue_c == 4 and bubble_c == 5:
+        print("scene 4", scene)
         scene_4.scene_4a()
+        fill(134, 222, 27, 160)
+        rect(100, 50, 310, 50)
+        n = createFont("Ubuntu-Medium.ttf", 18)
+        textFont(n)
+        fill(0, 0, 0)
+        text("Click 'C' to continue the conversation", 100, 80)
+        bubble_c += 1
         scene += 1
+        dialogue_c += 1
+        goToNextScene = False
+        print("clicked 4 times", scene)
+# PENNY'S THOUGHT BUBBLE
+    elif keyPressed and key == 'c' and goToNextScene == True and bubble_t == 1 and dialogue_c == 5 and dialogue_t == 0:
+        think_class.think_tree()
+        blurb_t = tree[dialogue_t]
+        words_t = blurb_t["talk"]
+        x = blurb_t["x"]
+        y = blurb_t["y"]
+        n = createFont("RobotoCondensed-Bold.ttf", 20)
+        textFont(n)
+        text(words_t, x, y)
+        print("1dialogue tree")
+        fill(134, 222, 27, 160)
+        rect(100, 50, 310, 50)
+        n = createFont("Ubuntu-Medium.ttf", 18)
+        textFont(n)
+        fill(0, 0, 0)
+        text("Click 'C' to continue the conversation", 100, 80)
+        dialogue_t += 1
+        bubble_t += 1
+        goToNextBubble = False
 
 
 # CHOICE B
@@ -472,11 +510,12 @@ def draw():
         text("Click 'C' to continue the conversation", 100, 80)
         bubble_c += 1
         scene += 1
+        dialogue_c += 1
         goToNextScene = False
         print("clicked 4 times", scene)
-# TREE SCENE 5
+# TREE SCENE 5: Choice B
     # PENNY'S THOUGHT BUBBLE
-    elif keyPressed and key == 'c' and goToNextScene == True and bubble_t == 1 and dialogue_c == 7 and bubble_c == 6:
+    elif keyPressed and key == 'c' and goToNextScene == True and bubble_t == 1 and dialogue_c == 7 and dialogue_t == 1:
         think_class.think_tree()
         blurb_t = tree[dialogue_t]
         words_t = blurb_t["talk"]
