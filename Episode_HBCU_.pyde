@@ -113,7 +113,7 @@ def setup():
     classroom = [
             {
               "talk": "Good morning class I am Mrs. Grant, \nwelcome to African American Studies! \nHas everyone done the summer reading? ",
-              "x":530,
+              "x":560,
               "y":100
               },
               {
@@ -123,7 +123,7 @@ def setup():
               },
               {
               "talk": "Excuse me Mrs. Johnson, I didn't\n do the reading.",
-              "x":400,
+              "x":570,
               "y":100
               },
               {
@@ -133,7 +133,7 @@ def setup():
               },
               {
               "talk": "Yes ",
-              "x":400,
+              "x":100,
               "y":100
               },
               {
@@ -143,6 +143,40 @@ def setup():
               },
              ]
 
+
+    dialogue_c = 0        
+    classroom = [
+            {
+            "talk": "I am so glad that I was honest today in class",
+            "x":560,
+            "y":100
+            },
+            {
+            "talk": " OMG!! I never even knew that we had\n summer reading!! Should I...",
+            "x":400,
+            "y":100
+            },
+            {
+            "talk": "Excuse me Mrs. Johnson, I didn't\n do the reading.",
+            "x":570,
+            "y":100
+            },
+            {
+            "talk": "Thats ok, I appreciate your honesty. \nYou can take the pop quiz next week.",
+            "x":530,
+            "y":100
+            },
+            {
+            "talk": "Yes ",
+            "x":100,
+            "y":100
+            },
+            {
+            "talk": "OK great! So everyone has done the \nreading! Time for a pop quiz!! ",
+            "x":530,
+            "y":100
+            },
+            ]
 
 
 def draw():
@@ -415,11 +449,11 @@ def draw():
         text(words_c,x,y)
         print("1dialogue classroom")
         fill (134, 222, 27, 160)
-        rect(100, 50, 310, 50)
+        rect(500, 50, 310, 50)
         n= createFont ("Ubuntu-Medium.ttf",18)
         textFont(n)
         fill (0, 0, 0)
-        text("Click 'C' to continue the conversation",100, 80)
+        text("Click 'C' to continue the conversation",500, 80)
         dialogue_c += 1
         bubble_c += 1
         goToNextBubble = False
