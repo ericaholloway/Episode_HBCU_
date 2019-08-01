@@ -19,6 +19,7 @@ def setup():
     global classroom
     global dialogue
     global dialogue_c
+    global dialogue_t
     global goToNextScene
     global goToNextBubble
     global think_x
@@ -144,38 +145,28 @@ def setup():
              ]
 
 
-    dialogue_c = 0        
-    classroom = [
+    dialogue_t = 0        
+    tree = [
             {
             "talk": "I am so glad that I was honest today in class",
             "x":560,
             "y":100
             },
             {
-            "talk": " OMG!! I never even knew that we had\n summer reading!! Should I...",
+            "talk": "What do you think you’re doin?",
             "x":400,
             "y":100
             },
             {
-            "talk": "Excuse me Mrs. Johnson, I didn't\n do the reading.",
+            "talk": "I am just sitting down.",
             "x":570,
             "y":100
             },
             {
-            "talk": "Thats ok, I appreciate your honesty. \nYou can take the pop quiz next week.",
+            "talk": "Well, little girl. You should not be sitting \nhere!! This is my sorority plot. Now get off!!.",
             "x":530,
             "y":100
-            },
-            {
-            "talk": "Yes ",
-            "x":100,
-            "y":100
-            },
-            {
-            "talk": "OK great! So everyone has done the \nreading! Time for a pop quiz!! ",
-            "x":530,
-            "y":100
-            },
+            }
             ]
 
 
@@ -184,6 +175,7 @@ def draw():
     global scene
     global dialogue
     global dialogue_c
+    global dialogue_t
     global bubble
     global bubble_c
     global texts
@@ -392,6 +384,7 @@ def draw():
     
     
 #CHOICE "A" 
+#Classroom scene
     if keyPressed and key == 'a' and goToNextBubble == True and bubble_c == 3:
         bubble_class.bubble_class()
         blurb_c = classroom[dialogue_c]
@@ -433,10 +426,12 @@ def draw():
     elif keyPressed and key == 's' and scene == 4 and goToNextScene == True and bubble_c == 5:
         scene_4.scene_4a()
         scene += 1
+
         
         
         
 #CHOICE B
+    #Classroom scene
     if keyPressed and key == 'b' and goToNextBubble == True and bubble_c == 3:
         bubble_class_1.bubble_class_1()
         dialogue_c = 4
