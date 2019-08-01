@@ -163,8 +163,8 @@ def setup():
         },
         {
             "talk": "I'm just sitting down.",
-            "x": 30,
-            "y": 100
+            "x": 100,
+            "y": 250
         },
         {
             "talk": "Well, little girl, you should not be sitting \nhere!! This is my sorority plot. Now get off!!.",
@@ -579,7 +579,6 @@ def draw():
         goToNextBubble = False
     elif keyPressed and key == 'c' and goToNextScene == True and bubble_t == 3 and dialogue_t == 3 and ((dialogue_c == 7 and bubble_c == 8) or (bubble_c == 8 and dialogue_c == 9)) :
         bubble_class_1.bubble_tree_1()
-        dialogue_t == 2
         blurb_t = tree[dialogue_t]
         words_t = blurb_t["talk"]
         x = blurb_t["x"]
@@ -596,8 +595,42 @@ def draw():
         text("Click 'C' to continue the conversation", 100, 80)
         dialogue_t += 1
         bubble_t += 1
+        dialogue_c += 1
+        bubble_c += 1
         goToNextBubble = False
-    
+    elif keyPressed and key == 'c' and goToNextScene == True and bubble_t == 4 and dialogue_t == 4 and ((dialogue_c == 8 and bubble_c == 9) or (bubble_c == 9 and dialogue_c == 10)) :
+        bubble_class.bubble_tree()
+        blurb_t = tree[dialogue_t]
+        words_t = blurb_t["talk"]
+        x = blurb_t["x"]
+        y = blurb_t["y"]
+        n = createFont("RobotoCondensed-Bold.ttf", 20)
+        textFont(n)
+        text(words_t, x, y)
+        print("3dialogue tree ")
+        fill(240, 10, 63, 250)
+        rect(100, 50, 310, 50)
+        n = createFont("Ubuntu-Medium.ttf", 18)
+        textFont(n)
+        fill(0, 0, 0)
+        text("Click 'S' to go to next scene", 100, 80)
+        dialogue_t += 1
+        bubble_t += 1
+        dialogue_c += 1
+        bubble_c += 1
+        goToNextBubble = False
+    if keyPressed and key == 's' and scene == 5 and goToNextScene == True and bubble_t == 5:
+        scene_3.scene_3()
+        fill(134, 222, 27, 160)
+        rect(100, 50, 310, 50)
+        n = createFont("Ubuntu-Medium.ttf", 18)
+        textFont(n)
+        fill(0, 0, 0)
+        text("Click 'C' to continue the conversation", 100, 80)
+        bubble += 1
+        scene += 1
+        goToNextScene = False
+        print("clicked 5 times", scene)
 
     #elif keyPressed and key == 's' and scene == 4 and goToNextScene == True and dialogue_c == 7 and bubble_c == 5:
     #print(key, scene, goToNextScene, dialogue_c, dialogue_t, bubble_c, bubble_t)
