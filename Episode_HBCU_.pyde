@@ -333,6 +333,16 @@ def draw():
         goToNextBubble = False
     elif keyPressed and key == 'c' and goToNextBubble == True and bubble_c == 2:
         think_class.think_class()
+        fill (255, 255, 255, 180)
+        rect(500, 332, 500, 50)
+        n= createFont ("Ubuntu-Medium.ttf",18)
+        textFont(n)
+        fill (0, 0, 0)
+        text(" 'A': \n Admit to the teacher that I haven't done summer reading",500, 350)
+        fill (255, 255, 255, 180)
+        rect(500, 402, 520, 50)
+        fill (0, 0, 0)
+        text(" 'B': \n Act like I know what shes talking about and hope for the best ",500, 420)
         blurb_c = classroom[dialogue_c]
         words_c = blurb_c["talk"]
         x = blurb_c ["x"]
@@ -344,6 +354,8 @@ def draw():
         dialogue_c += 1
         bubble_c += 1
         goToNextBubble = False        
+    
+    
     
 #CHOICE "A" 
     if keyPressed and key == 'a' and goToNextBubble == True and bubble_c == 3:
@@ -387,6 +399,8 @@ def draw():
     elif keyPressed and key == 's' and scene == 4 and goToNextScene == True and bubble_c == 5:
         scene_4.scene_4a()
         scene += 1
+        
+        
         
 #CHOICE B
     if keyPressed and key == 'b' and goToNextBubble == True and bubble_c == 3:
