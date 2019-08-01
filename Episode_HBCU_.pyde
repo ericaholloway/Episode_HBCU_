@@ -7,6 +7,7 @@ import speech
 import left_convo_2
 import right_convo_2
 import bubble_class
+import bubble_class_1
 import think_class
 
 def setup():
@@ -118,12 +119,12 @@ def setup():
               {
               "talk": " OMG!! I never even knew that we had\n summer reading!! Should I...",
               "x":400,
-              "y":150
+              "y":100
               },
               {
               "talk": "Excuse me Mrs. Johnson, I didn't\n do the reading.",
-              "x":700,
-              "y":260
+              "x":400,
+              "y":100
               },
               {
               "talk": "Thats ok, I appreciate your honesty. \nYou can take the pop quiz next week.",
@@ -132,8 +133,8 @@ def setup():
               },
               {
               "talk": "Yes ",
-              "x":700,
-              "y":260
+              "x":400,
+              "y":100
               },
               {
               "talk": "OK great! So everyone has done the \nreading! Time for a pop quiz!! ",
@@ -311,7 +312,7 @@ def draw():
 
 #TALKING IN THE CLASSROOM
         #Teacher's SPEECH BUBBLE
-    if keyPressed and key == 'c' and goToNextBubble == True and bubble_c % 2 == 1:
+    if keyPressed and key == 'c' and goToNextBubble == True and bubble_c == 1 :
         bubble_class.bubble_class()
         blurb_c = classroom[dialogue_c]
         words_c = blurb_c["talk"]
@@ -330,7 +331,7 @@ def draw():
         dialogue_c += 1
         bubble_c += 1
         goToNextBubble = False
-    elif keyPressed and key == 'c' and goToNextBubble == True and bubble_c % 2 == 0:
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble_c == 2:
         think_class.think_class()
         blurb_c = classroom[dialogue_c]
         words_c = blurb_c["talk"]
@@ -342,11 +343,96 @@ def draw():
         print("2dialogue classroom")
         dialogue_c += 1
         bubble_c += 1
+        goToNextBubble = False        
+    
+#CHOICE "A" 
+    if keyPressed and key == 'a' and goToNextBubble == True and bubble_c == 3:
+        bubble_class.bubble_class()
+        blurb_c = classroom[dialogue_c]
+        words_c = blurb_c["talk"]
+        x = blurb_c ["x"]
+        y = blurb_c ["y"]
+        n= createFont ("RobotoCondensed-Bold.ttf",20)
+        textFont(n)
+        text(words_c,x,y)
+        print("1dialogue classroom")
+        fill (134, 222, 27, 160)
+        rect(100, 50, 310, 50)
+        n= createFont ("Ubuntu-Medium.ttf",18)
+        textFont(n)
+        fill (0, 0, 0)
+        text("Click 'C' to continue the conversation",100, 80)
+        dialogue_c += 1
+        bubble_c += 1
         goToNextBubble = False
-        
-    if keyPressed and key == 's' and scene == 4 and goToNextScene == True:
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble_c == 4:
+        bubble_class.bubble_class()
+        blurb_c = classroom[dialogue_c]
+        words_c = blurb_c["talk"]
+        x = blurb_c ["x"]
+        y = blurb_c ["y"]
+        n= createFont ("RobotoCondensed-Bold.ttf",20)
+        textFont(n)
+        text(words_c,x,y)
+        print("1dialogue classroom")
+        fill (240, 10, 63, 250)
+        rect(100, 50, 310, 50)
+        n= createFont ("Ubuntu-Medium.ttf",18)
+        textFont(n)
+        fill (0, 0, 0)
+        text("Click 'S' to go next the scene",100, 80)
+        dialogue_c += 1
+        bubble_c += 1
+        goToNextBubble = False
+    elif keyPressed and key == 's' and scene == 4 and goToNextScene == True and bubble_c == 5:
         scene_4.scene_4a()
         scene += 1
+        
+#CHOICE B
+    if keyPressed and key == 'b' and goToNextBubble == True and bubble_c == 3:
+        bubble_class_1.bubble_class_1()
+        dialogue_c = 4
+        blurb_c = classroom[dialogue_c]
+        words_c = blurb_c["talk"]
+        x = blurb_c ["x"]
+        y = blurb_c ["y"]
+        n= createFont ("RobotoCondensed-Bold.ttf",20)
+        textFont(n)
+        text(words_c,x,y)
+        print("1dialogue classroom")
+        fill (134, 222, 27, 160)
+        rect(100, 50, 310, 50)
+        n= createFont ("Ubuntu-Medium.ttf",18)
+        textFont(n)
+        fill (0, 0, 0)
+        text("Click 'C' to continue the conversation",100, 80)
+        dialogue_c += 1
+        bubble_c += 1
+        goToNextBubble = False
+    elif keyPressed and key == 'c' and goToNextBubble == True and bubble_c == 4:
+        bubble_class.bubble_class()
+        blurb_c = classroom[dialogue_c]
+        words_c = blurb_c["talk"]
+        x = blurb_c ["x"]
+        y = blurb_c ["y"]
+        n= createFont ("RobotoCondensed-Bold.ttf",20)
+        textFont(n)
+        text(words_c,x,y)
+        print("1dialogue classroom")
+        fill (240, 10, 63, 250)
+        rect(100, 50, 310, 50)
+        n= createFont ("Ubuntu-Medium.ttf",18)
+        textFont(n)
+        fill (0, 0, 0)
+        text("Click 'S' to go next the scene",100, 80)
+        dialogue_c += 1
+        bubble_c += 1
+        goToNextBubble = False
+    elif keyPressed and key == 's' and scene == 4 and goToNextScene == True and bubble_c == 5:
+        scene_4.scene_4b()
+        scene += 1
+    
+    
         
         
 def keyReleased():

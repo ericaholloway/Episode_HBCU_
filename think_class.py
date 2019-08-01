@@ -5,5 +5,5 @@ def think_class():
     
             goToNextBubble = False
             scene_3.scene_3()
-            think.think(300,10)
+            think.think(350,10)
             print("thinking bubble")
