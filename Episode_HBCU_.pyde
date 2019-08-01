@@ -2,6 +2,7 @@ import scene_1
 import scene_2
 import scene_3
 import scene_4
+import scene_5
 import think
 import speech
 import left_convo_2
@@ -620,17 +621,19 @@ def draw():
         bubble_c += 1
         goToNextBubble = False
     if keyPressed and key == 's' and scene == 5 and goToNextScene == True and bubble_t == 5:
-        scene_3.scene_3()
-        fill(134, 222, 27, 160)
+        scene_5.scene_5()
+        fill(240, 10, 63, 250)
         rect(100, 50, 310, 50)
         n = createFont("Ubuntu-Medium.ttf", 18)
         textFont(n)
         fill(0, 0, 0)
-        text("Click 'C' to continue the conversation", 100, 80)
+        text("Click 'S' to go to next scene", 100, 80)
         bubble += 1
         scene += 1
         goToNextScene = False
         print("clicked 5 times", scene)
+    
+        
 
     #elif keyPressed and key == 's' and scene == 4 and goToNextScene == True and dialogue_c == 7 and bubble_c == 5:
     #print(key, scene, goToNextScene, dialogue_c, dialogue_t, bubble_c, bubble_t)
