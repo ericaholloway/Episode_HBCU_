@@ -156,7 +156,7 @@ def setup():
          {
             "talk": "I can't believe I failed my first quiz...\nI dont think this day can get any worse.",
             "x": 370,
-            "y": 250
+            "y": 230
         },
         {
             "talk": "Penny, what do you think you're doin?",
