@@ -152,22 +152,22 @@ def setup():
             "y": 250
         },
          {
-            "talk": "I can't believe I failed my first quiz...I dont think this day can get any worse.",
-            "x": 360,
+            "talk": "I can't believe I failed my first quiz...\nI dont think this day can get any worse.",
+            "x": 370,
             "y": 250
         },
         {
-            "talk": "What do you think you’re doin?",
-            "x": 400,
+            "talk": "Penny, what do you think you're doin?",
+            "x": 530,
             "y": 100
         },
         {
-            "talk": "I am just sitting down.",
-            "x": 350,
+            "talk": "I'm just sitting down.",
+            "x": 30,
             "y": 100
         },
         {
-            "talk": "Well, little girl. You should not be sitting \nhere!! This is my sorority plot. Now get off!!.",
+            "talk": "Well, little girl, you should not be sitting \nhere!! This is my sorority plot. Now get off!!.",
             "x": 530,
             "y": 100
         }
@@ -420,6 +420,10 @@ def draw():
         dialogue_c += 1
         bubble_c += 1
         goToNextBubble = False
+
+
+
+
 # TREE SCENE 5: Choice A
     
     elif keyPressed and key == 's' and scene == 4 and goToNextScene == True and dialogue_c == 4 and bubble_c == 5:
@@ -434,11 +438,13 @@ def draw():
         bubble_c += 1
         scene += 1
         dialogue_c += 1
+        dialogue_t = 0
+        bubble_t = 1
         goToNextScene = False
         print("clicked 4 times", scene)
 # PENNY'S THOUGHT BUBBLE
-    elif keyPressed and key == 'c' and goToNextScene == True and bubble_t == 1 and dialogue_c == 5 and dialogue_t == 0:
-        think_class.think_tree()
+    elif keyPressed and key == 'c' and goToNextScene == True and bubble_t == 1 and dialogue_c == 5 and bubble_c == 6 and dialogue_t == 0:
+        think_class.think_treea()
         blurb_t = tree[dialogue_t]
         words_t = blurb_t["talk"]
         x = blurb_t["x"]
@@ -446,16 +452,21 @@ def draw():
         n = createFont("RobotoCondensed-Bold.ttf", 20)
         textFont(n)
         text(words_t, x, y)
-        print("1dialogue tree")
+        print("1dialogue tree choice a")
         fill(134, 222, 27, 160)
         rect(100, 50, 310, 50)
         n = createFont("Ubuntu-Medium.ttf", 18)
         textFont(n)
         fill(0, 0, 0)
         text("Click 'C' to continue the conversation", 100, 80)
-        dialogue_t += 1
-        bubble_t += 1
         goToNextBubble = False
+        dialogue_t += 2
+        dialogue_c += 1
+        bubble_t += 1
+        bubble_c += 1
+        print("YAYYYY")
+        return
+
 
 
 # CHOICE B
@@ -470,7 +481,7 @@ def draw():
         n = createFont("RobotoCondensed-Bold.ttf", 20)
         textFont(n)
         text(words_c, x, y)
-        print("1dialogue classroom")
+        print("1dialogue classroom choice b")
         fill(134, 222, 27, 160)
         rect(500, 50, 310, 50)
         n = createFont("Ubuntu-Medium.ttf", 18)
@@ -501,7 +512,7 @@ def draw():
         goToNextBubble = False
     elif keyPressed and key == 's' and scene == 4 and goToNextScene == True and dialogue_c == 6 and bubble_c == 5:
         print("scene 4", scene)
-        scene_4.scene_4b()
+        scene_4.scene_4a()
         fill(134, 222, 27, 160)
         rect(100, 50, 310, 50)
         n = createFont("Ubuntu-Medium.ttf", 18)
@@ -511,12 +522,17 @@ def draw():
         bubble_c += 1
         scene += 1
         dialogue_c += 1
+        dialogue_t += 1
         goToNextScene = False
         print("clicked 4 times", scene)
+
+
+
+
 # TREE SCENE 5: Choice B
     # PENNY'S THOUGHT BUBBLE
-    elif keyPressed and key == 'c' and goToNextScene == True and bubble_t == 1 and dialogue_c == 7 and dialogue_t == 1:
-        think_class.think_tree()
+    elif keyPressed and key == 'c' and goToNextScene == True and bubble_t == 1 and bubble_c == 6 and dialogue_c == 7 and dialogue_t == 1:
+        think_class.think_treeb()
         blurb_t = tree[dialogue_t]
         words_t = blurb_t["talk"]
         x = blurb_t["x"]
@@ -533,10 +549,58 @@ def draw():
         text("Click 'C' to continue the conversation", 100, 80)
         dialogue_t += 1
         bubble_t += 1
+        dialogue_c += 1
+        bubble_c += 1
         goToNextBubble = False
+        return
+    
+
+    if keyPressed and key == 'c' and goToNextScene == True and bubble_t == 2 and dialogue_t == 2 and ((dialogue_c == 6 and bubble_c == 7) or (bubble_c == 7 and dialogue_c == 8)) :
+        bubble_class.bubble_tree()
+        dialogue_t == 2
+        blurb_t = tree[dialogue_t]
+        words_t = blurb_t["talk"]
+        x = blurb_t["x"]
+        y = blurb_t["y"]
+        n = createFont("RobotoCondensed-Bold.ttf", 20)
+        textFont(n)
+        text(words_t, x, y)
+        print("1dialogue tree")
+        fill(134, 222, 27, 160)
+        rect(100, 50, 310, 50)
+        n = createFont("Ubuntu-Medium.ttf", 18)
+        textFont(n)
+        fill(0, 0, 0)
+        text("Click 'C' to continue the conversation", 100, 80)
+        dialogue_t += 1
+        bubble_t += 1
+        dialogue_c += 1
+        bubble_c += 1
+        goToNextBubble = False
+    elif keyPressed and key == 'c' and goToNextScene == True and bubble_t == 3 and dialogue_t == 3 and ((dialogue_c == 7 and bubble_c == 8) or (bubble_c == 8 and dialogue_c == 9)) :
+        bubble_class_1.bubble_tree_1()
+        dialogue_t == 2
+        blurb_t = tree[dialogue_t]
+        words_t = blurb_t["talk"]
+        x = blurb_t["x"]
+        y = blurb_t["y"]
+        n = createFont("RobotoCondensed-Bold.ttf", 20)
+        textFont(n)
+        text(words_t, x, y)
+        print("2dialogue tree ")
+        fill(134, 222, 27, 160)
+        rect(100, 50, 310, 50)
+        n = createFont("Ubuntu-Medium.ttf", 18)
+        textFont(n)
+        fill(0, 0, 0)
+        text("Click 'C' to continue the conversation", 100, 80)
+        dialogue_t += 1
+        bubble_t += 1
+        goToNextBubble = False
+    
 
     #elif keyPressed and key == 's' and scene == 4 and goToNextScene == True and dialogue_c == 7 and bubble_c == 5:
-    print(key, scene, goToNextScene, dialogue_c, bubble_c)
+    #print(key, scene, goToNextScene, dialogue_c, dialogue_t, bubble_c, bubble_t)
 
 
 def keyReleased():
